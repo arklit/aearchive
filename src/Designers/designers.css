@@ -1,0 +1,17 @@
+.designers__item {
+    margin-bottom: 5px;
+}
+.designers__list {
+    list-style-type: none; 
+    cursor: pointer;
+}
+.designers__item:hover {
+    box-shadow: 0 1px black;
+}
+.designers__item::before {
+    content: "○";
+    padding-right: 10px;
+}
+.designers__item:hover::before {
+    content: "●";
+}
