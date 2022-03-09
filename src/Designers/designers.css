@@ -5,6 +5,7 @@
     padding: 0;
     list-style-type: none; 
     cursor: pointer;
+    position: relative;
 }
 .designers__item:hover {
     font-style: italic;
