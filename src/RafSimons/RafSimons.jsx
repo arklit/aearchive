@@ -1,8 +1,10 @@
 function RafSimons(props) {
-  const {isOpen} = props;
+  const {isRafOpen, RafClick} = props;
+  const active = `designers__item ${isRafOpen ? 'designers__item_active' : ''}`
   return(
     <>
-    {isOpen && (
+    <li className={active} onClick={RafClick}>Raf Simons</li>
+    {isRafOpen && (
       <ul className="collection">
         <li className="collection__item">AW96 We Only Come Out At Night</li>
         <li className="collection__item">SS97 How To Talk To Your Teen</li>

@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 .designers__item:hover {
-    box-shadow: 0 1px black;
+    font-style: italic;
 }
 .designers__item::before {
     content: "○";
@@ -16,19 +16,10 @@
 .designers__item:hover::before {
     content: "●";
 }
-.line {
-    width: 400px;
-    border-bottom: 1px solid black;
-    display: flex;
-    justify-content: space-between;
+.designers__item_active {
+    box-shadow: 0 1px black;
+    font-style: italic;
 }
-.line1 {
-    width: 5px;
-    height: 2px;
-    border-bottom: 1px solid black;
-}
-.line2 { 
-    width: 5px;
-    height: 2px;
-    border-bottom: 1px solid black;
+.designers__item_active::before {
+    content: "●";
 }

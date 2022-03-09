@@ -1,30 +1,45 @@
 import React from "react";
 import Designers from "../Designers/designers";
 import Header from "../Header/header";
-import RafSimons from "../RafSimons/RafSimons";
 function App() {
-  const [isOpen, setIsOpen] = React.useState(
-    localStorage.getItem('isHidden')
-    ? JSON.parse(localStorage.getItem('isOpen'))
+  const [isRafOpen, setIsRafOpen] = React.useState(
+    localStorage.getItem('isRafHidden')
+    ? JSON.parse(localStorage.getItem('isRafHidden'))
     : false
   );
-  function handleOpen() {
-    setIsOpen(true)
-    localStorage.setItem("isHidden", JSON.stringify(isOpen))
-    if(isOpen) {
-      setIsOpen(false)
+  const [isUndercoverOpen, setIsUndercoverOpen] = React.useState(
+    localStorage.getItem('isUndercoverHidden')
+    ? JSON.parse(localStorage.getItem('isUndercoverHidden'))
+    : false
+  );
+  function handleRafOpen() {
+    setIsRafOpen(true)
+    localStorage.setItem("isRafHidden", JSON.stringify(isRafOpen))
+    if(isRafOpen) {
+      setIsRafOpen(false)
     }
-  }
+  };
+  function handleUndercoverOpen() {
+    setIsUndercoverOpen(true)
+    localStorage.setItem("isUndercoverHidden", JSON.stringify(isUndercoverOpen))
+    if(isUndercoverOpen) {
+      setIsUndercoverOpen(false)
+    }
+  };
   
   React.useEffect(() => {
-    handleOpen()
+    handleRafOpen()
+    handleUndercoverOpen()
   }, [])
 
   return (
     <div className="App">
       <Header/>
-      <Designers handleClick={handleOpen}/>
-      <RafSimons isOpen={isOpen}/>
+      <Designers 
+      isRafOpen={isRafOpen} 
+      RafClick={handleRafOpen}
+      isUndercoverOpen={isUndercoverOpen}
+      UndercoverClick={handleUndercoverOpen}/>
     </div>
   );
 }
