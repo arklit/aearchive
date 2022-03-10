@@ -1,4 +1,13 @@
 .header__logo {
   font-size: 32px;
   line-height: 32px;
+  text-align: top;
+  font-size: 24px;
+  margin: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  height: 32px;
 }

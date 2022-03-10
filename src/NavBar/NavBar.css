@@ -1,0 +1,18 @@
+.NavBar {
+    display: flex;
+}
+.NavBar__link {
+    margin-right: 24px;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    padding-top: 8px;
+    color: black;
+}
+.NavBar__link::before {
+  content: "○";
+  padding-right: 10px;
+}
+.NavBar__link_active::before {
+  content: "●";
+}
