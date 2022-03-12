@@ -1,15 +1,15 @@
 import Header from "../Header/header"
 import RafSimons from "../RafSimons/RafSimons"
+import RickOwens from "../RickOwens/RickOwens"
 import Undercover from "../Undercover/Undercover"
 
 function Designers(props) {
   return(
     <>
-      <Header/>
       <ul className="designers__list">
         <RafSimons {...props}/>
         <Undercover {...props}/>
-        <li className="designers__item">Rick Owens</li>
+        <RickOwens {...props}/>
         <li className="designers__item">NUMBER (N)INE</li>
         <li className="designers__item">TAKAHIROMIYASHITA The Soloist</li>
         <li className="designers__item">Carol Christian Poell</li>

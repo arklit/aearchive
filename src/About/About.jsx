@@ -1,8 +1,6 @@
- import Header from "../../Header/header"
  function About() {
   return(
     <>
-    <Header/>
     </>
   )
  }

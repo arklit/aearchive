@@ -18,6 +18,7 @@
     content: "●";
 }
 .designers__item_active {
+    transition: box-shadow 0.5s linear;
     box-shadow: 0 1px black;
     font-style: italic;
 }

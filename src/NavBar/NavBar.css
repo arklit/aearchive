@@ -9,6 +9,9 @@
     padding-top: 8px;
     color: black;
 }
+.NavBar__link:last-child {
+  margin: 0;
+}
 .NavBar__link::before {
   content: "○";
   padding-right: 10px;
