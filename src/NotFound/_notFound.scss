@@ -2,10 +2,11 @@
     text-align: center;
     display: block;
     height: 700px;
-  }
-  .NotFound:before {
+  
+  &:before {
     content: "";
     display: inline-block;
     height: 100%;
     vertical-align: middle;
   }
+}

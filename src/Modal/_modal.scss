@@ -17,12 +17,12 @@
   cursor: default;
   overflow-y: scroll;
   overflow-x: hidden;
-}
-.modal_visible {
+
+&_visible {
   visibility: visible;
   opacity: 1;
 }
-.modal__close{
+&__close{
   background-color: transparent;
   outline: none;
   cursor: pointer;
@@ -32,7 +32,7 @@
   line-height: 32px;
   margin-right: 400px
 }
-.modal__section {
+&__section {
   height: 100%;
   position: absolute;
   top: 0;
@@ -42,20 +42,21 @@
   flex-direction: column;
   background-color: white;
 }
-.modal__header {
+&__header {
   display: flex;
   padding-top: 24px;
   position: sticky;
   top: 0;
 }
-.modal__items {
+&__items {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 25px;
   margin: 17px 24px 0px;
 }
-.modal__item{
+&__item{
   width: 285px;
   height: 308px;
+}
 }

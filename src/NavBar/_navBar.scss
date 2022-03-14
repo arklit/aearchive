@@ -1,0 +1,22 @@
+.NavBar {
+    display: flex;
+
+   &__link {
+    margin-right: 24px;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    padding-top: 8px;
+    color: black;
+  }
+  &__link:last-child {
+    margin: 0;
+  }
+  &__link:before {
+    content: "○";
+    padding-right: 10px;
+  }
+    &__link_active:before {
+    content: "●";
+  }
+}
