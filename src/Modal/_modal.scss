@@ -44,9 +44,8 @@
 }
 &__header {
   display: flex;
-  padding-top: 24px;
-  position: sticky;
-  top: 0;
+  padding: 24px 24px 0;
+  justify-content: space-between;
 }
 &__items {
   display: grid;

@@ -3,7 +3,13 @@
     list-style-type: none; 
     cursor: pointer;
     position: relative;
+    text-decoration: none;
+    color: black;
 }
+  .designers__link {
+    text-decoration: none;
+    color: black;
+  }
 
 .designers__item {
   margin-bottom: 5px;

@@ -1,11 +1,9 @@
 function RickOwens(props) {
-  const {isRickOpen, RickClick} = props;
-  const active = `designers__item ${isRickOpen ? 'designers__item_active' : ''}`
+  const {isRickOpen} = props;
   return(
     <>
-    <li className={active} onClick={RickClick}>RickOwens</li>
     {isRickOpen && (
-      <ul className="collection">
+      <ul className="collection collection__rick">
         <li className="collection__item">FW98 MONSTERS</li>
         <li className="collection__item">SS99 POWDER</li>
         <li className="collection__item">FW99 HYDRA</li>

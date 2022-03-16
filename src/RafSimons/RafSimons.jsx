@@ -1,15 +1,14 @@
 import AW96 from "./AW96/AW96";
+import SS97 from "./SS97/SS97";
 
 function RafSimons(props) {
-  const {isRafOpen, RafClick} = props;
-  const active = `designers__item ${isRafOpen ? 'designers__item_active' : ''}`
+  const {isRafOpen} = props;
   return(
     <>
-    <li className={active} onClick={RafClick}>Raf Simons</li>
     {isRafOpen && (
-      <ul className="collection">
+      <ul className="collection collection__raf">
         <AW96/>
-        <li className="collection__item">SS97 How To Talk To Your Teen</li>
+        <SS97/>
         <li className="collection__item">SS98 Black Palms</li>
         <li className="collection__item">AW98 Radioactivity</li>
         <li className="collection__item">SS99 Kinetic Youth</li>
@@ -38,7 +37,7 @@ function RafSimons(props) {
         <li className="collection__item">SS18 Replicants</li>
         <li className="collection__item">AW18 Youth In Motion</li>
       </ul>
-    )}
+      )}
     </>
     )
 }

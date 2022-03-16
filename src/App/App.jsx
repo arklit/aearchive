@@ -1,10 +1,9 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Contacts from "../Contacts/Contacts";
 import Designers from "../Designers/designers";
 import About from "../About/About";
 import Header from "../Header/header";
-import NotFound from "../NotFound/NotFound";
 function App() {
   const [isRafOpen, setIsRafOpen] = React.useState(
     localStorage.getItem('isRafHidden')
@@ -59,7 +58,7 @@ function App() {
     <div className="app">
       <Header/>
       <Routes>
-        <Route path="/" element={<Designers
+        <Route path="archive/*" element={<Designers
           isRafOpen={isRafOpen} 
           RafClick={handleRafOpen}
           isUndercoverOpen={isUndercoverOpen}
@@ -68,7 +67,7 @@ function App() {
           RickClick={handleRickOpen}/>}/>
         <Route path="contacts" element={<Contacts/>}/>
         <Route path="about" element={<About/>}/>
-        <Route path="*" element={<NotFound/>}/>
+        <Route path="*" element={<Navigate to="/archive"/>}/>
       </Routes>
     </div>
   );
