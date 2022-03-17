@@ -1,4 +1,4 @@
-import { Link, Route, useMatch, Routes } from "react-router-dom"
+import { Link, Route, Routes } from "react-router-dom"
 import Header from "../Header/header"
 import RafSimons from "../RafSimons/RafSimons"
 import RickOwens from "../RickOwens/RickOwens"
@@ -36,7 +36,7 @@ function Designers(props) {
         <li className="designers__item">Visvim</li>
         </ul>
         <Routes>
-        <Route path='rafsimons' element={<RafSimons isRafOpen={isRafOpen}/>}/>
+        <Route path='rafsimons/*' element={<RafSimons isRafOpen={isRafOpen}/>}/>
         <Route path='undercover' element={<Undercover isUndercoverOpen={isUndercoverOpen}/>}/>
         <Route path='rickowens' element={<RickOwens isRickOpen={isRickOpen}/>}/>
         </Routes>

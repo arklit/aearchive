@@ -1,13 +1,38 @@
+import { useState, useEffect } from "react";
 import AW96 from "./AW96/AW96";
 import SS97 from "./SS97/SS97";
+import { RafSimonsTitle } from '../utils/constants';
+import { Link, Route, Routes } from "react-router-dom";
 
 function RafSimons(props) {
   const {isRafOpen} = props;
+  const [isAw96Open, setIsAw96Open] = useState(false);
+  
+  function handleAw96Open() {
+    setIsAw96Open(true)
+  }
+  function closeAll() {
+    setIsAw96Open(false)
+  }
+  useEffect(() => {
+    function handleEscClose(evt) {
+      if (evt.key === 'Escape') {
+        closeAll();
+      }
+    }
+    document.addEventListener('keydown', handleEscClose)
+    return () => {
+      document.removeEventListener('keydown', handleEscClose)
+    };
+  }, [])
+
   return(
     <>
     {isRafOpen && (
       <ul className="collection collection__raf">
-        <AW96/>
+        <li className="collection__item" onClick={handleAw96Open}>
+          <Link className="collection__link" to="/archive/rafsimons/aw96">{RafSimonsTitle.aw96}</Link>
+        </li>
         <SS97/>
         <li className="collection__item">SS98 Black Palms</li>
         <li className="collection__item">AW98 Radioactivity</li>
@@ -38,6 +63,12 @@ function RafSimons(props) {
         <li className="collection__item">AW18 Youth In Motion</li>
       </ul>
       )}
+      <Routes>
+        <Route path="aw96" element={<AW96 
+        title={RafSimonsTitle.aw96}
+        isOpen={isAw96Open}
+        closeModal={closeAll} />}/>
+      </Routes>
     </>
     )
 }
