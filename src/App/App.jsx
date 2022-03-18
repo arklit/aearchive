@@ -20,6 +20,18 @@ function App() {
     ? JSON.parse(localStorage.getItem('isRickHidden'))
     : false
   );
+  const [isNumberNineOpen, setIsNumberNineOpen] = React.useState(
+    localStorage.getItem('isNumberNineHidden')
+    ? JSON.parse(localStorage.getItem('isNumberNineHidden'))
+    : false
+  );
+  function handleNumberNineOpen() {
+    setIsNumberNineOpen(true)
+    localStorage.setItem("isNumberNineHidden", JSON.stringify(isNumberNineOpen))
+    if(isNumberNineOpen) {
+      setIsNumberNineOpen(false)
+    }
+  };
   function handleRickOpen() {
     setIsRickOpen(true)
     localStorage.setItem("isRickHidden", JSON.stringify(isRickOpen))
@@ -52,6 +64,9 @@ function App() {
   React.useEffect(() => {
     handleRickOpen()
   }, [])
+  React.useEffect(() => {
+    handleNumberNineOpen()
+  }, [])
 
 
   return (
@@ -64,7 +79,9 @@ function App() {
           isUndercoverOpen={isUndercoverOpen}
           UndercoverClick={handleUndercoverOpen}
           isRickOpen={isRickOpen}
-          RickClick={handleRickOpen}/>}/>
+          RickClick={handleRickOpen}
+          NumberNineClick={handleNumberNineOpen}
+          isNumberNineOpen={isNumberNineOpen}/>}/>
         <Route path="contacts" element={<Contacts/>}/>
         <Route path="about" element={<About/>}/>
         <Route path="*" element={<Navigate to="/archive"/>}/>
