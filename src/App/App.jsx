@@ -25,6 +25,18 @@ function App() {
     ? JSON.parse(localStorage.getItem('isNumberNineHidden'))
     : false
   );
+  const [isCCPopen, setIsCCPopen] = React.useState(
+    localStorage.getItem('isCCPHidden')
+    ? JSON.parse(localStorage.getItem('isCCPHidden'))
+    : false
+  );
+  function handleCCPOpen() {
+    setIsCCPopen(true)
+    localStorage.setItem("isCCPHidden", JSON.stringify(isCCPopen))
+    if(isCCPopen) {
+      setIsCCPopen(false)
+    }
+  };
   function handleNumberNineOpen() {
     setIsNumberNineOpen(true)
     localStorage.setItem("isNumberNineHidden", JSON.stringify(isNumberNineOpen))
@@ -67,6 +79,9 @@ function App() {
   React.useEffect(() => {
     handleNumberNineOpen()
   }, [])
+  React.useEffect(() => {
+    handleCCPOpen()
+  }, [])
 
 
   return (
@@ -81,7 +96,9 @@ function App() {
           isRickOpen={isRickOpen}
           RickClick={handleRickOpen}
           NumberNineClick={handleNumberNineOpen}
-          isNumberNineOpen={isNumberNineOpen}/>}/>
+          isNumberNineOpen={isNumberNineOpen}
+          isCCPopen={isCCPopen}
+          CCPclick={handleCCPOpen}/>}/>
         <Route path="contacts" element={<Contacts/>}/>
         <Route path="about" element={<About/>}/>
         <Route path="*" element={<Navigate to="/archive"/>}/>

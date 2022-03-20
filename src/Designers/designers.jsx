@@ -1,4 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom"
+import CCP from "../CCP/CCP"
 import NumberNine from "../NumberNine/numberNine"
 import RafSimons from "../RafSimons/RafSimons"
 import RickOwens from "../RickOwens/RickOwens"
@@ -12,11 +13,14 @@ function Designers(props) {
     RickClick, 
     isRickOpen,
     NumberNineClick,
-    isNumberNineOpen} = props;
+    isNumberNineOpen,
+    isCCPopen,
+    CCPclick} = props;
   const numberNineActive = `designers__item ${isNumberNineOpen ? 'designers__item_active' : ''}`
   const rafActive = `designers__item ${isRafOpen ? 'designers__item_active' : ''}`;
   const undercoverActive = `designers__item ${isUndercoverOpen ? 'designers__item_active' : ''}`;
   const rickActive = `designers__item ${isRickOpen ? 'designers__item_active' : ''}`
+  const ccpActive = `designers__item ${isCCPopen ? 'designers__item_active' : ''}`
   return(
     <>
       <ul className="designers__list">
@@ -32,8 +36,10 @@ function Designers(props) {
         <li className={numberNineActive} onClick={NumberNineClick}>
           <Link className="designers__link" to="/archive/numbernine">Number (N)ine</Link>
         </li>
+        <li className={ccpActive} onClick={CCPclick}>
+          <Link className="designers__link" to="/archive/ccp">Carol Christian Poell</Link>
+        </li>
         <li className="designers__item">TAKAHIROMIYASHITA The Soloist</li>
-        <li className="designers__item">Carol Christian Poell</li>
         <li className="designers__item">Kiko Kostadinov</li>
         <li className="designers__item">Maison Margiela</li>
         <li className="designers__item">Comme des Garçons</li>
@@ -45,6 +51,7 @@ function Designers(props) {
         <Route path='undercover' element={<Undercover isUndercoverOpen={isUndercoverOpen}/>}/>
         <Route path='rickowens' element={<RickOwens isRickOpen={isRickOpen}/>}/>
         <Route path='numbernine' element={<NumberNine isNumberNineOpen={isNumberNineOpen}/>}/>
+        <Route path='ccp' element={<CCP isCCPopen={isCCPopen}/>}/>
         </Routes>
     </>
     )
