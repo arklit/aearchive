@@ -30,6 +30,19 @@ function App() {
     ? JSON.parse(localStorage.getItem('isCCPHidden'))
     : false
   );
+  const [isMargielaOpen, setIsMargielaOpen] = React.useState(
+    localStorage.getItem('isMargielaHidden')
+    ? JSON.parse(localStorage.getItem('isMargielaHidden'))
+    : false
+  );
+  function handleMargielaOpen() {
+    setIsMargielaOpen(true)
+    localStorage.setItem("isMargielaHidden", JSON.stringify(isMargielaOpen))
+    if(isMargielaOpen) {
+      setIsMargielaOpen(false)
+    }
+  };
+
   function handleCCPOpen() {
     setIsCCPopen(true)
     localStorage.setItem("isCCPHidden", JSON.stringify(isCCPopen))
@@ -98,7 +111,9 @@ function App() {
           NumberNineClick={handleNumberNineOpen}
           isNumberNineOpen={isNumberNineOpen}
           isCCPopen={isCCPopen}
-          CCPclick={handleCCPOpen}/>}/>
+          CCPclick={handleCCPOpen}
+          isMaisonMargielaOpen={isMargielaOpen}
+          MargielaClick={handleMargielaOpen}/>}/>
         <Route path="contacts" element={<Contacts/>}/>
         <Route path="about" element={<About/>}/>
         <Route path="*" element={<Navigate to="/archive"/>}/>
