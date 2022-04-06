@@ -1,7 +1,8 @@
 function MaisonMargiela(props) {
-  const {isMaisonMargielaOpen} = props;
+  const {isMaisonMargielaOpen, margielaActive, MargielaClick} = props;
   return(
     <>
+    <li className={margielaActive} onClick={MargielaClick}>Maison Margiela</li>
     {isMaisonMargielaOpen && (
     <ul className="collection collection__Margiela">
       <li className="collection__item">SS 93</li>

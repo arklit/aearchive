@@ -35,7 +35,21 @@ function App() {
     ? JSON.parse(localStorage.getItem('isMargielaHidden'))
     : false
   );
+  const [isCDGOpen , setIsCDGOpen] = React.useState(
+    localStorage.getItem('isCDGHidden')
+    ? JSON.parse(localStorage.getItem('isCDGHidden'))
+    : false
+  )
+  function handleCDGOpen() {
+    closeAll()
+    setIsCDGOpen(true)
+    localStorage.setItem('IsCDGHidden', JSON.stringify(isCDGOpen))
+    if(isCDGOpen) {
+      setIsCDGOpen(false)
+    }
+  }
   function handleMargielaOpen() {
+    closeAll()
     setIsMargielaOpen(true)
     localStorage.setItem("isMargielaHidden", JSON.stringify(isMargielaOpen))
     if(isMargielaOpen) {
@@ -44,6 +58,7 @@ function App() {
   };
 
   function handleCCPOpen() {
+    closeAll()
     setIsCCPopen(true)
     localStorage.setItem("isCCPHidden", JSON.stringify(isCCPopen))
     if(isCCPopen) {
@@ -51,6 +66,7 @@ function App() {
     }
   };
   function handleNumberNineOpen() {
+    closeAll()
     setIsNumberNineOpen(true)
     localStorage.setItem("isNumberNineHidden", JSON.stringify(isNumberNineOpen))
     if(isNumberNineOpen) {
@@ -58,6 +74,7 @@ function App() {
     }
   };
   function handleRickOpen() {
+    closeAll()
     setIsRickOpen(true)
     localStorage.setItem("isRickHidden", JSON.stringify(isRickOpen))
     if(isRickOpen) {
@@ -66,6 +83,7 @@ function App() {
   };
 
   function handleRafOpen() {
+    closeAll()
     setIsRafOpen(true)
     localStorage.setItem("isRafHidden", JSON.stringify(isRafOpen))
     if(isRafOpen) {
@@ -73,28 +91,30 @@ function App() {
     }
   };
   function handleUndercoverOpen() {
+    closeAll()
     setIsUndercoverOpen(true)
     localStorage.setItem("isUndercoverHidden", JSON.stringify(isUndercoverOpen))
     if(isUndercoverOpen) {
       setIsUndercoverOpen(false)
     }
   };
-  
   React.useEffect(() => {
     handleRafOpen()
-  }, [])
-  React.useEffect(() => {
     handleUndercoverOpen()
-  }, [])
-  React.useEffect(() => {
     handleRickOpen()
-  }, [])
-  React.useEffect(() => {
     handleNumberNineOpen()
-  }, [])
-  React.useEffect(() => {
+    handleMargielaOpen()
     handleCCPOpen()
   }, [])
+  function closeAll() {
+    setIsCCPopen(false)
+    setIsCDGOpen(false)
+    setIsMargielaOpen(false)
+    setIsNumberNineOpen(false)
+    setIsRafOpen(false)
+    setIsUndercoverOpen(false)
+    setIsRickOpen(false)
+  }
 
 
   return (
@@ -113,7 +133,9 @@ function App() {
           isCCPopen={isCCPopen}
           CCPclick={handleCCPOpen}
           isMaisonMargielaOpen={isMargielaOpen}
-          MargielaClick={handleMargielaOpen}/>}/>
+          MargielaClick={handleMargielaOpen}
+          isCDGOpen={isCDGOpen}
+          CDGClick={handleCDGOpen}/>}/>
         <Route path="contacts" element={<Contacts/>}/>
         <Route path="about" element={<About/>}/>
         <Route path="*" element={<Navigate to="/archive"/>}/>

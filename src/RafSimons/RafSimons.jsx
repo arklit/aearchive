@@ -5,7 +5,7 @@ import { RafSimonsTitle } from '../utils/constants';
 import { Link, Route, Routes } from "react-router-dom";
 
 function RafSimons(props) {
-  const {isRafOpen} = props;
+  const {isRafOpen, rafActive, RafClick} = props;
   const [isAw96Open, setIsAw96Open] = useState(false);
   
   function handleAw96Open() {
@@ -28,6 +28,7 @@ function RafSimons(props) {
 
   return(
     <>
+    <li className={rafActive} onClick={RafClick}>Raf Simons</li>
     {isRafOpen && (
       <ul className="collection collection__raf">
         <li className="collection__item" onClick={handleAw96Open}>

@@ -1,7 +1,8 @@
 function NumberNine(props) {
-  const {isNumberNineOpen} = props;
+  const {isNumberNineOpen, numberNineActive, NumberNineClick} = props;
   return(
     <>
+    <li className={numberNineActive} onClick={NumberNineClick}>Number (N)ine</li>
     {isNumberNineOpen && (
     <ul className="collection collection__NumberNine">
       <li className="collection__item">FW99 Rock</li>

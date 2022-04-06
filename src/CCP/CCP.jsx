@@ -1,7 +1,8 @@
 function CCP(props) {
-  const { isCCPopen } = props;
+  const { isCCPopen, ccpActive, CCPclick } = props;
   return(
     <>
+    <li className={ccpActive} onClick={CCPclick}>Carol Christian Poell</li>
     {isCCPopen && (
     <ul className="collection collection__CCP">
       <li className="collection__item">F/W 94-95 non-intended collection</li>

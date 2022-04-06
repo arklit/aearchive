@@ -1,7 +1,8 @@
 function RickOwens(props) {
-  const {isRickOpen} = props;
+  const {isRickOpen, rickActive, RickClick} = props;
   return(
     <>
+    <li className={rickActive} onClick={RickClick}>Rick Owens</li>
     {isRickOpen && (
       <ul className="collection collection__rick">
         <li className="collection__item">FW98 MONSTERS</li>

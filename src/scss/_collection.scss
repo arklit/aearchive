@@ -1,6 +1,6 @@
 .collection {
   position: absolute;
-  right: 20px;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -11,24 +11,6 @@
   &__link {
     text-decoration: none;
     color: #666666
-  }
-  &__raf {
-    top: 75px;
-  }
-  &__undercover {
-    top: 100px;
-  }
-  &__rick {
-    top: 125px;
-  }
-  &__NumberNine {
-    top: 150px;
-  }
-  &__CCP {
-    top: 175px;
-  }
-  &__Margiela {
-    top: 200px;
   }
   &__item {
     color: #666666
