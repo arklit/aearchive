@@ -1,16 +1,6 @@
-import { useState } from "react";
 import Modal from "../../Modal/Modal";
-
-function SS97() {
-  const title = 'SS97 How To Talk To Your Teen';
-  const [isOpen, setIsOpen] = useState(false)
-  function openModal() {
-    setIsOpen(true)
-  }
-  function closeModal() {
-    setIsOpen(false)
-  }
-
+function SS97(props) {
+  const { openModal, title, closeModal, isOpen } =props;
   return(
     <>
     <li onClick={openModal} className="collection__item">{title}</li>

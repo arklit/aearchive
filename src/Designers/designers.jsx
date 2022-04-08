@@ -8,8 +8,7 @@ import Undercover from "../Undercover/Undercover"
 import CDG from "../CDG/CDG"
 
 function Designers(props) {
-  const {isRafOpen, 
-    RafClick, 
+  const {isRafOpen,  
     UndercoverClick, 
     isUndercoverOpen, 
     RickClick, 
@@ -32,7 +31,7 @@ function Designers(props) {
   return(
     <>
       <ul className="designers__list">
-        <RafSimons rafActive={rafActive} isRafOpen={isRafOpen} RafClick={RafClick}/>
+        <RafSimons rafActive={rafActive} {...props}/>
         <Undercover 
         undercoverActive={undercoverActive} 
         isUndercoverOpen={isUndercoverOpen}

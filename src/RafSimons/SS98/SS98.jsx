@@ -1,14 +1,14 @@
-import Modal from "../../Modal/Modal.jsx"
-function AW96(props) {
-  const { isOpen, title, closeModal, openModal} = props;
+import Modal from "../../Modal/Modal";
+function SS98(props) {
+  const { openModal, title, closeModal, isOpen } =props;
   return(
     <>
     <li onClick={openModal} className="collection__item">{title}</li>
     <Modal
-    title={title} 
+    title={title}
     modalClose={closeModal} 
     modalOpen={isOpen}/>
     </>
   )
 }
-export default AW96
+export default SS98

@@ -1,5 +1,5 @@
 import Modal from "../../Modal/Modal.jsx"
-function AW96(props) {
+function AW99(props) {
   const { isOpen, title, closeModal, openModal} = props;
   return(
     <>
@@ -11,4 +11,4 @@ function AW96(props) {
     </>
   )
 }
-export default AW96
+export default AW99
