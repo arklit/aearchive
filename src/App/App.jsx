@@ -182,7 +182,7 @@ function App() {
     <div className="app">
       <Header/>
       <Routes>
-        <Route path="archive/*" element={<Designers
+        <Route path="/*" element={<Designers
           isRafOpen={isRafOpen}
           isAw96Open={isAw96Open}
           isSs97Open={isSs97Open}
@@ -258,7 +258,7 @@ function App() {
           CDGClick={handleCDGOpen}/>}/>
         <Route path="contacts" element={<Contacts/>}/>
         <Route path="about" element={<About/>}/>
-        <Route path="*" element={<Navigate to="/archive"/>}/>
+        <Route path="*" element={<Navigate to="/"/>}/>
       </Routes>
     </div>
   );

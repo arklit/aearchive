@@ -7,13 +7,20 @@
   list-style: none;
   transition: .3s;
   padding-bottom: 30px;
-  
+  margin-right: 24px;
   &__link {
     text-decoration: none;
     color: #666666
   }
+  &__raf {
+    top: 75px;
+  }
+  &__undercover {
+    top:100px;
+  }
   &__item {
-    color: #666666
+    color: #666666;
+    text-decoration: none;
   }
   &__item:hover {
     cursor: pointer;

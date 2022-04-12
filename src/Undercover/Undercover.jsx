@@ -1,8 +1,7 @@
 function Undercover(props) {
-  const {isUndercoverOpen, undercoverActive, UndercoverClick} = props;
+  const {isUndercoverOpen} = props;
   return(
     <>
-    <li className={undercoverActive} onClick={UndercoverClick}>Undercover</li>
     {isUndercoverOpen && (
     <ul className="collection collection__undercover">
       <li className="collection__item">SS94 Languid</li>

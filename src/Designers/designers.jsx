@@ -10,7 +10,8 @@ import CDG from "../CDG/CDG"
 function Designers(props) {
   const {isRafOpen,  
     UndercoverClick, 
-    isUndercoverOpen, 
+    isUndercoverOpen,
+    RafClick,
     RickClick, 
     isRickOpen,
     NumberNineClick,
@@ -31,11 +32,12 @@ function Designers(props) {
   return(
     <>
       <ul className="designers__list">
-        <RafSimons rafActive={rafActive} {...props}/>
-        <Undercover 
-        undercoverActive={undercoverActive} 
-        isUndercoverOpen={isUndercoverOpen}
-        UndercoverClick={UndercoverClick}/>
+        <li className={rafActive} onClick={RafClick}>
+          <Link className="designers__link" to="rafsimons">Raf Simons</Link>
+        </li>
+        <li className={undercoverActive} onClick={UndercoverClick}>
+          <Link className="designers__link" to="undercover">Undercover</Link>
+        </li>
         <RickOwens rickActive={rickActive} isRickOpen={isRickOpen} RickClick={RickClick}/>
         <NumberNine numberNineActive={numberNineActive} 
         isNumberNineOpen={isNumberNineOpen}
@@ -51,14 +53,17 @@ function Designers(props) {
         isCDGOpen={isCDGOpen}
         CDGClick={CDGClick}/>
         </ul>
-        {/* <Routes>
-        <Route path='rafsimons/*' element={<RafSimons isRafOpen={isRafOpen}/>}/>
-        <Route path='undercover' element={<Undercover isUndercoverOpen={isUndercoverOpen}/>}/>
+        <Routes>
+        <Route path='rafsimons/*' element={<RafSimons rafActive={rafActive} {...props}/>}/>
+        <Route path='undercover/*' element={<Undercover 
+        undercoverActive={undercoverActive} 
+        isUndercoverOpen={isUndercoverOpen}
+        UndercoverClick={UndercoverClick}/>}/>
         <Route path='rickowens' element={<RickOwens isRickOpen={isRickOpen}/>}/>
         <Route path='numbernine' element={<NumberNine isNumberNineOpen={isNumberNineOpen}/>}/>
         <Route path='ccp' element={<CCP isCCPopen={isCCPopen}/>}/>
         <Route path='margiela' element={<MaisonMargiela isMaisonMargielaOpen={isMaisonMargielaOpen}/>}/>
-        </Routes> */}
+        </Routes>
     </>
     )
 }

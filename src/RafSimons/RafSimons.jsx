@@ -28,9 +28,10 @@ import SS06 from './SS06/SS06';
 import SS09 from './SS09/SS09';
 import SS10 from './SS10/SS10';
 import SS18 from './SS18/SS18';
+import { Routes, Route, Link } from "react-router-dom";
 
 function RafSimons(props) {
-  const {isRafOpen, rafActive, RafClick, closeModal, handleAw96Open, isAw96Open, handleSs97Open, isSs97Open, isSs99Open, 
+  const {isRafOpen, closeModal, handleAw96Open, isAw96Open, handleSs97Open, isSs97Open, isSs99Open, 
     isSs00Open, isSs02Open, isSs03Open, isSs04Open, isSs05Open, isSs06Open, isSs09Open, isSs10Open, isSs18Open, isAw14Open, isSs98Open,
     handleSs98Open, isAw98Open, isAw99Open, isAw00Open, isAw01Open, isAw02Open, isAw03Open, isAw04Open, isAw05Open, isAw06Open, isAw08Open,
     isAw10Open, isAw11Open, isAw16Open, isAw17Open, isAw18Open, handleAw98Open, handleSs99Open, handleAw99Open, handleSs00Open, handleAw00Open,
@@ -39,11 +40,18 @@ function RafSimons(props) {
     handleAw17Open, handleSs18Open, handleAw18Open} = props;
   return(
     <>
-    <li className={rafActive} onClick={RafClick}>Raf Simons</li>
     {isRafOpen && (
       <ul className="collection collection__raf">
-        <AW96 isOpen={isAw96Open} title={RafSimonsTitle.aw96} closeModal={closeModal} openModal={handleAw96Open}/>
-        <SS97 isOpen={isSs97Open} title={RafSimonsTitle.ss97} closeModal={closeModal} openModal={handleSs97Open}/>
+        <li onClick={handleAw96Open}>
+          <Link className="collection__item" to='aw96'>{RafSimonsTitle.aw96}</Link>
+        </li>
+        <li onClick={handleSs97Open}>
+          <Link className="collection__item" to='ss97'>{RafSimonsTitle.ss97}</Link>
+        </li>
+        <Routes>
+          <Route path="aw96" element={<AW96 isOpen={isAw96Open} closeModal={closeModal} title={RafSimonsTitle.aw96}/>}/>
+          <Route path="ss97" element={<SS97 isOpen={isSs97Open} closeModal={closeModal} title={RafSimonsTitle.ss97}/>}/>
+        </Routes>
         <SS98 isOpen={isSs98Open} title={RafSimonsTitle.ss98} closeModal={closeModal} openModal={handleSs98Open}/>
         <AW98 isOpen={isAw98Open} title={RafSimonsTitle.aw98} closeModal={closeModal} openModal={handleAw98Open}/>
         <SS99 isOpen={isSs99Open} title={RafSimonsTitle.ss99} closeModal={closeModal} openModal={handleSs99Open}/>

@@ -1,9 +1,8 @@
 import Modal from "../../Modal/Modal.jsx"
 function AW96(props) {
-  const { isOpen, title, closeModal, openModal} = props;
+  const { isOpen, title, closeModal} = props;
   return(
     <>
-    <li onClick={openModal} className="collection__item">{title}</li>
     <Modal
     title={title} 
     modalClose={closeModal} 
